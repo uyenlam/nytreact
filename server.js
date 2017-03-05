@@ -18,15 +18,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
+// serve static all files in /public
 app.use(express.static("./public"));
 
 // Load handlebars and designate main.handlebars as the default file
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
-
-
-// //Imports the controller.js file
-// var routes = require('./controllers/controller.js');
 
 
 // -------------------------------------------------
